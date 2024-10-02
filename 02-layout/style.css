@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+body{
+    font-size: 1.6rem;
+}
+/*  */
+.demo-bg1{
+    height: 100vh;
+    background-color: red;
+}
+/* vh: viewheight chiều cao của browser */
+.demo-bg2{
+    height: 100vh;
+    background-color: aquamarine;
+    background-image: url("./meo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+/* demo layout
+c1: dùng display: inline-block + font-size
+c2: float + clearfix
+c3: flex */
+.parent{
+    border: 3px solid black;
+
+}
+.left-side{
+    border: 3px solid blue;
+    float: left;
+}
+.right-side{
+    border: 3px solid red;
+    float: right;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    /* giả 1 thằng con để cha to ra để ôm */
+  }
+.container{
+    border: 3px solid red;
+    height: 27rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.left-side___banner{
+    border: 3px solid aqua;
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+.right-side___banner{
+    border: 3px solid aqua;
+    float: left;
+    width: 30%;
+    height: 100%;
+}
+.right-side___img{
+    border: 3px solid green;
+    height: 50%;
+}
+/* xử lý hình */
+.img__block{
+    width: 100%;
+    height: 100%;
+}
+.img__block img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
