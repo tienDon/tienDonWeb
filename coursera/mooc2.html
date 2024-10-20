@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Hover Example</title>
+    <style>
+      body {
+        margin: 2%;
+        border: 1px solid black;
+        background-color: #b3b3b3;
+      }
+      #message {
+        line-height: 100px;
+        text-align: center;
+        width: 575px;
+        height: 100px;
+        border: 5px solid black;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        background-color: #8e68ff;
+        font-size: 150%;
+      }
+      .preview {
+        width: 10%;
+        margin-left: 17%;
+        border: 10px solid black;
+      }
+      img {
+        width: 95%;
+      }
+      #hoveredImage {
+        width: 300px; /* Kích thước cho hình ảnh hiển thị */
+        display: block; /* Hiển thị hình ảnh */
+        margin: 0 auto; /* Căn giữa hình ảnh */
+        margin-top: 20px; /* Khoảng cách từ thông báo */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">Hover over an image to display the alt text.</div>
+
+    <img
+      class="preview"
+      alt="HTML"
+      src="html.png"
+      onmouseover="showProperties(this)"
+      onmouseleave="resetProperties()"
+    />
+
+    <img
+      class="preview"
+      alt="CSS"
+      src="css.png"
+      onmouseover="showProperties(this)"
+      onmouseleave="resetProperties()"
+    />
+
+    <img
+      class="preview"
+      alt="JAVASCRIPT"
+      src="js.png"
+      onmouseover="showProperties(this)"
+      onmouseleave="resetProperties()"
+    />
+
+    <img id="hoveredImage" src="" alt="Hovered Image" style="display: none" />
+    <!-- Hình ảnh hiển thị -->
+
+    <script>
+      function showProperties(element) {
+        document.getElementById("message").innerHTML = element.alt;
+        document.getElementById("hoveredImage").src = element.src; // Thay đổi hình ảnh hiển thị
+        document.getElementById("hoveredImage").style.display = "block"; // Hiển thị hình ảnh
+      }
+
+      function resetProperties() {
+        document.getElementById("message").innerHTML = "Hover over an image";
+        document.getElementById("hoveredImage").style.display = "none"; // Ẩn hình ảnh
+      }
+    </script>
+  </body>
+</html>
